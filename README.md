@@ -3,7 +3,7 @@
 Bu proje, modern HTTP önceliklendirme standartlarını (**RFC 9213**) temel alarak geliştirilmiş, yüksek performanslı bir **API Gateway İstek Zamanlayıcısı** simülasyonudur. Sistem, gelen istekleri **Min-Heap** veri yapısı kullanarak O(\log n) karmaşıklıkla önceliklendirir.
 
 ## 🚀 Öne Çıkan Özellikler
-***RFC 9213 Uyumluluğu:** `Urgency` (0-7) ve `Incremental` parametrelerini destekleyen gelişmiş parser modülü.
+* ***RFC 9213 Uyumluluğu:** `Urgency` (0-7) ve `Incremental` parametrelerini destekleyen gelişmiş parser modülü.
 * **Yüksek Performans:** Sıradan dizilere göre 100 kat daha hızlı olan Min-Heap tabanlı öncelikli kuyruk (Priority Queue).
 * **Modüler Mimari:** "Separation of Concerns" prensibiyle ayrılmış 4 farklı katman (.h/.c ayrımı)[cite: 588, 589].
 * **Hata Yönetimi (Resilience):** Geçersiz header değerlerinde (u=9 gibi) sistem çökmez, "Graceful Degradation" ile varsayılan öncelik atar.
@@ -26,11 +26,11 @@ Proje, **Facade Design Pattern** kullanılarak şu katmanlara ayrılmıştır:
 
 
 ##  Test Senaryoları
-**Sistem aşağıdaki durumlar için otomatik test edilmektedir:
-**Farklı önceliklerdeki (u=0...7) isteklerin doğru sıralanması.
-**Geçersiz header formatlarının (u=9, u=-1) yönetilmesi.
-**8'den fazla istek geldiğinde kapasitenin dinamik olarak 16'ya büyümesi (realloc).
-**Gerçekçi bir web sayfası yükleme simülasyonu.
+* **Sistem aşağıdaki durumlar için otomatik test edilmektedir:
+* **Farklı önceliklerdeki (u=0...7) isteklerin doğru sıralanması.
+* **Geçersiz header formatlarının (u=9, u=-1) yönetilmesi.
+* **8'den fazla istek geldiğinde kapasitenin dinamik olarak 16'ya büyümesi (realloc).
+* **Gerçekçi bir web sayfası yükleme simülasyonu.
 
 ## 🛠️ Kurulum ve Çalıştırma
 Projeyi derlemek için terminale `make` yazmanız veya aşağıdaki GCC komutunu kullanmanız yeterlidir:
